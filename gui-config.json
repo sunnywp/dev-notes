@@ -1,75 +1,82 @@
 {
   "configs": [
     {
-      "server": "107.191.45.229",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "美国"
-    },
-    {
       "server": "45.32.77.72",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "美国vip"
-    },
-    {
-      "server": "45.32.55.153",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "日本vip"
-    },
-    {
-      "server": "47.52.96.249",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "香港vip"
+      "remarks": "USvip"
     },
     {
       "server": "45.32.79.177",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "美国中级vip"
-    },
-    {
-      "server": "45.32.27.216",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "日本中级vip"
+      "remarks": "USmvip"
     },
     {
       "server": "162.220.12.166",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "美国高级vip"
+      "remarks": "USsvip"
+    },
+    {
+      "server": "45.32.55.153",
+      "server_port": 24615,
+      "password": "tao3379121",
+      "method": "rc4-md5",
+      "remarks": "JPvip"
+    },
+    {
+      "server": "45.32.27.216",
+      "server_port": 24615,
+      "password": "tao3379121",
+      "method": "rc4-md5",
+      "remarks": "JPmvip"
     },
     {
       "server": "45.76.110.66",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "日本高级vip"
+      "remarks": "JPsvip"
+    },
+    {
+      "server": "47.52.96.249",
+      "server_port": 24615,
+      "password": "tao3379121",
+      "method": "rc4-md5",
+      "remarks": "HKvip"
     },
     {
       "server": "47.52.100.174",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "香港中级vip"
+      "remarks": "HKmvip"
     },
     {
       "server": "47.52.94.180",
       "server_port": 24615,
       "password": "tao3379121",
       "method": "rc4-md5",
-      "remarks": "香港高级vip"
-    }
+      "remarks": "HKsvip"
+    },
+    {
+      "server": "67.218.138.172",
+      "server_port": 5555,
+      "password": "KSTquvSRDF",
+      "method": "aes-256-cfb",
+      "remarks": "bwh01"
+    },
+    {
+      "server": "45.77.170.197",
+      "server_port": 5555,
+      "password": "Aa-123",
+      "method": "aes-256-cfb",
+      "remarks": "Vultr01"
+    },
   ],
   "strategy": null,
   "index": 7,
