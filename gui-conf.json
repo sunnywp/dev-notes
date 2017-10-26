@@ -1,55 +1,6 @@
 {
   "configs": [
     {
-      "server": "162.220.12.166",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "USSVIP"
-    },
-    {
-      "server": "45.32.55.153",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "JPVIP"
-    },
-    {
-      "server": "45.32.27.216",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "JPMVIP"
-    },
-    {
-      "server": "45.76.110.66",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "JPSVIP"
-    },
-    {
-      "server": "47.52.96.249",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "HKVIP"
-    },
-    {
-      "server": "47.52.100.174",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "HKMVIP"
-    },
-    {
-      "server": "47.52.94.180",
-      "server_port": 24615,
-      "password": "tao3379121",
-      "method": "rc4-md5",
-      "remarks": "HKSVIP"
-    },
-    {
       "server": "97.64.109.243",
       "server_port": 5555,
       "password": "Aa-123",
