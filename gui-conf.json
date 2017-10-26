@@ -50,7 +50,7 @@
       "remarks": "HKSVIP"
     },
     {
-      "server": "67.218.138.172",
+      "server": "97.64.109.243",
       "server_port": 5555,
       "password": "Aa-123",
       "method": "aes-256-cfb",
