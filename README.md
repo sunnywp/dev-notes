@@ -7,9 +7,9 @@
 2, 给centos7系统安装SSServer, 打开世界的大门: https://github.com/CN-Tower/LinuxBox/ss-server.md
 
 -----------------------------------------------------------------------------------------
-2, 给centos7系统安装Git, 库里的文件快到碗里来: https://github.com/CN-Tower/LinuxBox/git.md
+3, 给centos7系统安装Git, 库里的文件快到碗里来: https://github.com/CN-Tower/LinuxBox/git.md
 
 -----------------------------------------------------------------------------------------
-2, 给centos7系统安装Nginx, 布署你的个人网站: https://github.com/CN-Tower/LinuxBox/nginx.md
+4, 给centos7系统安装Nginx, 布署你的个人网站: https://github.com/CN-Tower/LinuxBox/nginx.md
 
 -----------------------------------------------------------------------------------------
