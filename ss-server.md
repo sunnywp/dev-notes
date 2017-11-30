@@ -1,27 +1,31 @@
-#方法一(脚本快速安装)
+# 给Linux系统安装ShadowSocks服务器
 
-【脚本功能】
+主要有两种方法：1，脚本自动安装 2，手动安装
 
+## 方法一 (脚本快速安装)
+
+### 【脚本功能】
 自定义端口号和密码
 全过程静默安装，不会打扰用户，你所要做的就是去听一首音乐或者去喝杯咖啡
 一次只允许运行一个shadowsocks进程，脚本会自动检测原来已经运行的进程并杀死
 安装防火墙并开放需要的端口
 
-【操作步骤】
-
+### 【操作步骤】
+```
 # 下载脚本
-wget -O ss.sh http://zhangdanyang.com/file/ss.sh
-# 执行脚本
-bash ss.sh
+$ wget -O ss.sh http://cntower001.com/file/ss.sh
+# 下载脚本
+$ bash ss.sh
+```
 
-# 设置端口号并回车，直接回车是设置为1225
+### 【运行步骤】
+设置端口号并回车，直接回车是设置为1225
 Please enter PORT(1225 default):
-# 设置密码并回车，直接回车是设置为123456
+设置密码并回车，直接回车是设置为123456
 Please enter PASSWORD(123456 default):
+等待一会……就完成了（初次执行约2-5min）
 
-# 等待一会……就完成了（初次执行约2-5min）
-
-【脚本源码】
+### 【脚本源码】
 ```
 #! /bin/bash
 # log路径
@@ -98,18 +102,18 @@ EOF
 fi
 ```
 
-#方法二(独立动手搭建)
+## 方法二 (独立动手搭建)
 
-【搭建 Shadowsocks 服务】
-
-安装组件
+### 【搭建 Shadowsocks 服务】
+```
+# 安装组件
 $ yum install m2crypto python-setuptools
 $ easy_install pip
 $ pip install shadowsocks
 
-安装完成后配置服务器参数
+# 安装完成后配置服务器参数
 $ vi  /etc/shadowsocks.json
-写入如下配置:
+# 写入如下配置:
 {
     "server":"0.0.0.0",
     "server_port":443,
@@ -120,7 +124,7 @@ $ vi  /etc/shadowsocks.json
     "method":"aes-256-cfb",
     "fast_open": false
 }
-多端口的如下：
+# 多端口的如下：
 {
     "server":"0.0.0.0",
     "local_address": "127.0.0.1",
@@ -133,33 +137,31 @@ $ vi  /etc/shadowsocks.json
     "method":"aes-256-cfb",
     "fast_open": false
 }
-其中server字段与local_address填写之前的IP Address。password是自己用于连接这个shadow socks的密码，自定义就好。 
-其他的不需要更改。
+# 其中server字段与local_address填写之前的IP Address. password是自己用于连接这个shadow socks的密码，自定义就好，其他的不需要更改。
+```
 
-【配置防火墙】
-
+### 【配置防火墙】
+```
 # 安装防火墙
 $ yum install firewalld
 # 启动防火墙
 $ systemctl start firewalld
-
-开启防火墙相应的端口
-# 端口号是你自己设置的端口
+# 开启防火墙相应的端口(端口号是你自己设置的端口)
 $ firewall-cmd --permanent --zone=public --add-port=443/tcp
 $ firewall-cmd --reload
+```
 
-【启动 Shadowsocks 服务】
-
+### 【启动 Shadowsocks 服务】
+```
 $ ssserver -c /etc/shadowsocks.json
-
 如果想干点其他的实现后台运行，使用
 $ nohup ssserver -c /etc/shadowsocks.json &
+```
 
-【连接】
+### 【连接】
 下载Shadow Socks客户端。SS加速器客户端下载 
 选择适合的版本，下载并解压运行。
 填写信息:服务器地址，端口号，密码，加密方式与代理端口默认即可
-
 iOS
 在App Store下载Wingy。
 填写信息:服务器，端口，密码，代理模式，加密方式默认即可。
