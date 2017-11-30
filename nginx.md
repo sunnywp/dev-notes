@@ -10,7 +10,7 @@ $: rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-
 $: yum install nginx
 ```
 
-### 3,防火墙设置
+### 3, 防火墙设置
 ```
 $: firewall-cmd --permanent --zone=public --add-service=http
 $: firewall-cmd --permanent --zone=public --add-service=https
