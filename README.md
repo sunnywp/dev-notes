@@ -1,7 +1,7 @@
 # 一些关于linux的资料
 
 -----------------------------------------------------------------------------------------
-1, 给centos7系统安装Google BBR, 让网带飞起来: https://github.com/CN-Tower/LinuxBox/bbr.md
+1, 给centos7系统安装Google BBR, 让网速飞起来: https://github.com/CN-Tower/LinuxBox/bbr.md
 
 -----------------------------------------------------------------------------------------
 2, 给centos7系统安装SSServer, 打开世界的大门: https://github.com/CN-Tower/LinuxBox/ss-server.md
