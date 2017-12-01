@@ -1,15 +1,15 @@
 # 一些关于linux的资料
 
 -----------------------------------------------------------------------------------------
-1, 给centos7系统安装Google BBR, 让网速飞起来: https://github.com/CN-Tower/LinuxBox/bbr.md
+1, 给centos7系统安装Google BBR, 让网速飞起来: https://github.com/CN-Tower/LinuxBox/blob/master/bbr.md
 
 -----------------------------------------------------------------------------------------
-2, 给centos7系统安装SSServer, 打开世界的大门: https://github.com/CN-Tower/LinuxBox/ss-server.md
+2, 给centos7系统安装SSServer, 打开世界的大门: https://github.com/CN-Tower/LinuxBox/blob/master/ss-server.md
 
 -----------------------------------------------------------------------------------------
-3, 给centos7系统安装Git, 库里的文件快到碗里来: https://github.com/CN-Tower/LinuxBox/git.md
+3, 给centos7系统安装Git, 库里的文件快到碗里来: https://github.com/CN-Tower/LinuxBox/blob/master/git.md
 
 -----------------------------------------------------------------------------------------
-4, 给centos7系统安装Nginx, 布署你的个人网站: https://github.com/CN-Tower/LinuxBox/nginx.md
+4, 给centos7系统安装Nginx, 布署你的个人网站: https://github.com/CN-Tower/LinuxBox/blob/master/nginx.md
 
 -----------------------------------------------------------------------------------------
