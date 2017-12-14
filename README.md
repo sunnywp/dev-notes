@@ -10,6 +10,6 @@
 3, 给centos7系统安装Git, 库里的文件快到碗里来: https://github.com/CN-Tower/LinuxBox/blob/master/git.md
 
 -----------------------------------------------------------------------------------------
-4, 给centos7系统安装Nginx, 布署你的个人网站: https://github.com/CN-Tower/LinuxBox/blob/master/nginx.md
+4, 给centos7系统安装Nginx, 部署你的个人网站: https://github.com/CN-Tower/LinuxBox/blob/master/nginx.md
 
 -----------------------------------------------------------------------------------------
