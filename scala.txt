@@ -1,0 +1,48 @@
+Scala 学习笔记
+
+第一章：基础
+
+1、声明变量：val name1，name2: String=”hello” val不可变变量，var可变。 
+2、常用类型：Byte、Char、Short、Int、Long、Float、Double、Boolean。但是不像Java这里是是实实在在的类，具有方法。 
+3、+-*/等操作符其实是方法:a + b类似于a.+(b).Scala中可以将方法调用的.省略：如1.to(10) 类似于1 to 10。 
+4、没有++操作符，因为Scala中大部分的算术类型都是不可变的如Int类型。 
+5、Scala.math中定义了很多方法，类似于静态方法。引入包后可以直接调用如：sqrt(4)。 
+6、Scala中没有static静态关键字，不过存在一个单例对象定义：object a{}，该类中的方法可以直接通过类名调用，类似于静态方法。通常一个类（class）应有一个伴生对象(object)。 
+7、不带参数的Scala方法通常可以不使用括号如：”hello”.distinct。每行语句结束不需要；号，除非一行有多条语句。 
+8、Scala中可以重载操作符，如之前的+-*/等操作符都是重载的方法。另外还有个特例()操作符重载，通过在类中定义一个apply方法就可以重载如：”hello”(4)类似于Java中的”hello”.charAt(i)。
+
+第二章：控制结构和函数
+
+1、条件表达式：if(x>0) 1 else -1 或 if(x>0){ 1 }else{ -1}。此处1 else -1 是一个表达式，返回类型是两个分支的公共类型。 
+2、Unit就是Java中的void，可以用()代替。 
+3、块表达式：{}表示为块，也是表达式，其返回类型是块中最后一个表达式的值。 
+4、赋值：赋值语句的返回类型是Unit如：x=1的值是Unit，所以不能x=y=1这样进行赋值，除非x是Unit类型。在使用x={}进行赋值时也要注意最后一个表达式是否为赋值语句。 
+5、输入和输出：输入，直接调用readLine()或者readInt等。输出，print、println、printf(“%s”,”hello”) 
+6、Scala有与Java和C++一样的while和do循环形式。但for循环不一样 
+7、for循环简单语法：for(i <- 集合){}，注意<-符号代表去让i变量遍历右边的集合。示例：for(i <- 1 to 10) 能取到10 for(i <- 1 util 10)不能取到10。 
+8、跳出循环：1、函数中可以使用return跳出函数 2、循环条件使用Boolean变量 3、使用Breaks对象中的break方法：
+  import scala.util.control.Breaks._
+  var sum = 0
+  breakable {
+    for (i <- 0 to 10) {
+     sum += i
+     if (sum >= 10) break
+   }
+  }
+9、高级for循环之生成器：for(i <- 1 to 3; from=4-i; j<- from to 3 if(i!=j))print((10*i +j)+” “)//将打印 13 23 31 32 解释：第一层循环i，每次循环i的时候第二层循环j。其中循环中变量from可以省，if语句用于筛选，注意if前面没有分号。可以使用{}代替()来换行使用。 
+10、for循环与yield结合使用，则整个循环语句返回的结果是一个集合，当for循环中有两个生成器时返回结果使用第一个生成器兼容的格式：for(i <- 1 to 10) yield i % 3 //结果：scala.collection.immutable.IndexedSeq[Int] = Vector(1, 2, 0, 1, 2, 0, 1, 2, 0, 1) 
+11、Scala与C++相同支持函数，函数定义格式为：def abs(x:Double)= if(x>=0) x else -x 。必须指定函数的参数类型，如果函数不是递归就不需要写出返回类型。如果函数需要多个表达式才能实现可以使用代码块{}，块中最后一个表达式就是返回值。Scala函数中不建议使用return返回，你可以使用但不推荐。递归函数：def fac(n:Int):Int =if(n<=0) 1else n*fac(n-1) 
+12、默认参数：就是在函数定义时将参数赋值如：def decorate(str:String,left:String=”[“,right: String =”]”)left+str+right。调用该函数的时候可以只用给出str的参数值就行，其他两个参数会使用默认参数，也可以在提供参数时给出参数名赋值参数，可以不按照顺序。 
+13、变长参数：def sum(args:Int*)={},需要接受的是seq的参数，sum（2 to 10）是错误的。可以通过追加：_*来解决不能接受的问题：sum(2 to 10:_*) 
+14、过程：没有函数名后面等号的函数称为过程，返回的是Unit. 
+15、懒加载：lazy val words=初始化表达式 ，该变量只有在使用时才会调用初始化 
+16、异常：异常与Java的异常类似，但是不强制函数向上传递异常。
+
+第三章：数组
+
+1、定义定长数组：类似Java和C++中的数组。定义：val nums=new Array[Int](10),会初始化为0，取值：nums(0)、赋值：nums(0)=12 
+2、定义变长数组：类似于Java/C++中的list。需要引入ArrayBuffer，定义：val b=ArrayBuffer[Int]()。取值:b(1)、尾部追加：b+=1、b+=(1,2,3,5)、b++=Array(1,2,3)、插入：b.insert(index,(边长参数))、移除：b.remove(index,可省参数：删除多少个) 
+3、遍历：for(i<- 0 until (a.length,2))，以每两个元素进行遍历。或者直接for(elem<-a) 
+4、数组转换：for(elem<-a)yield 2*elem 返回与a同样类型的集合 
+5、常用算法：求和：a.sum、最大/最小：a.max/min、排序：a.sorted/sortwith、打印：a.mkString(” and “) mkString(“<”,”,”,”>”) 
+6、多维数组：val matrix=Array.ofDim[Int](3,4) 访问：matrix(row)(column)=12。可以创建不同维度的数组：val triangle=new Array[Array[Int]](10)
