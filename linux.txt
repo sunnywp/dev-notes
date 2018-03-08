@@ -1,0 +1,359 @@
+1、关机
+shutdown -h now    立刻关机
+poweroff
+shutdown -r now    立刻重启
+reboot
+logout        注销
+
+2、进入图形界面
+startx
+
+3、vi编辑器
+[vi] [path]/[file]；
+[i]进入编辑模式；
+[esc]进入命令模式；
+[:wq]保存并退出；[:q!]退出不保存。
+
+4、显示列表
+ls    列表
+ls -l    详细列表 长列表格式
+ls -a    显示隐藏文件
+ll    详细列表
+ls -l /bin/*sh  列表bin目录中以sh为结尾的文件
+
+5、编译java文件（可以开发java、C、C++程序）
+javac Hello.java
+
+6、运行java程序
+java Hello
+
+7、编译C、C++程序
+gcc -o Hello Hello.c
+gcc -o Hello Hello.cpp
+
+8、运行C、C++程序
+./Hello.out
+
+9、linux目录说明
+root：存放root用户的相关文件
+home：存放普通用户的相关文件
+bin：存放常用命令
+sbin：要具有一定权限才可以访问的命令
+mnt：挂载光驱和软驱的目录
+etc：存放配置相关的文件
+var：存放经常变化的文件
+boot：存放引导相关的文件
+usr：软件的默认安装文件夹（类似于windows的Program Files）
+
+10、显示当前路径
+pwd
+
+11、添加用户
+useradd    xiaoming
+12、设置密码
+passwd xiaoming
+13、删除用户
+userdel    xiaoming
+14、删除用户以及用户目录
+userdel    -r xiaoming
+
+15、命令运行级别
+0：关机
+1：单用户
+2：多用户状态没有网络服务
+3：多用户状态有网络服务（常用）
+4：系统未使用保留给用户
+5：图形界面（常用）
+6：重启系统
+
+配置文件：/etc/inittab --> id:5:initdefault
+
+16、修改错误配置的方法
+在引导界面的时候按[e]；
+选中第2行，输入[e]；
+在最后输入[空格][1]-->代表1号级别，单用户级别。
+按[b]-->重启
+
+17、切换目录
+cd
+
+18、建立目录
+mkdir
+
+19、删除空目录
+rmdir
+rm -rf  删除非空目录
+
+20、建立空文件
+touch
+
+21、复制命令
+cp
+cp mys* /home 将mys开头的文件全部拷贝到home文件夹中
+cp -r   递归复制
+cp -rf  不询问，全部覆盖
+
+22、移动文件或改文件名
+mv
+
+23、删除文件或目录
+rm
+rm  -rf
+
+24、建立符号连接（相当于windows中的快捷方式）
+ln
+
+25、显示文件内容 带分页（空格是下一页，Ctrl+PageUp 上一页）
+more
+less
+
+26、在文本中查询内容
+grep
+grep -n "hello" [path]/[file]
+
+27、管道命令（相当于And，把上一个命令的结果交给|后面的命令处理）
+|
+
+28、帮助（相当于DOS下的help）
+man
+
+29、搜索文件及目录
+find
+find / -name Hello.java 
+find / -size +10000000k 
+find /home -amin -10 10分钟内存取的文件或目录
+find /home -atime -10 10小时内存取的文件或目录
+find /home -cmin -10 10小时内更改的文件或目录
+find /home -ctime +10 10小时前更改的文件或目录
+
+30、重定向命令
+>
+ls -l > abc.txt  将内容写到abc.txt中
+ls -al >> abc.txt  将内容追加到文件abc.txt结尾
+grep -n "hello" [path]/[file] > abc.txt 将查找结果保存到abc.txt中
+
+31、添加用户组
+groupadd
+
+32、查看组信息
+vi  /etc/group
+cat /etc/group（只是查看）
+
+33、创建用户并指定用户组
+useradd -g police xiaohong
+
+34、查看所有用户信息
+vi  /etc/password
+cat /etc/password
+
+35、文件权限
+-rw-r--r--
+-     代表文件类型：-普通文件
+rw-   文件的所有者对该文件的权限：r（4）可读，w（2）可写，x（1）可执行权限
+r--   文件所在组对该文件的权限
+r--   其它用户对该文件的权限
+
+36、修改文件访问权限
+chmod 777 xiaoming
+
+37、可以让xiaohong修改xiaoming的文件
+chmod 664 Hello.java
+
+38、改变用户所在组
+usermod -g 组名 用户名
+
+39、挂载镜像 首先将虚拟机的CD-ROM指定某个镜像
+mount /mnt/cdrom/
+mount /dev/sda1 /test/  #将sda1盘挂载到test目录下。
+
+40、卸载镜像
+umount /mnt/cdrom/
+
+41、以后台方式运行
+./eclipse &
+
+42、Eclipse运行，首先要配置Tomcat，然后再配置Jdk。
+
+43、查看磁盘使用情况
+df  [参数]
+df  -l
+df  -h
+
+44、查看某个目录在哪个分区
+df  [目录全路径]
+df  /boot/
+
+45、查看linux系统分区具体情况
+fdisk  -l
+
+/dev/sda1 .....
+dev  设备名称
+sd   SCSI硬盘（还有一种IDE硬盘，如：hda1，意思一样。）
+a    第几个盘
+1    第几个分区
+
+46、显示当前操作系统的环境变量
+env
+
+47、改变shell输入方式
+chsh -s /bin/csh
+
+48、shell命令补全功能
+直接输入"mk"--再按两下"tab"键--出现两头两个字母为"mk"的命令。
+直接输入"cat p"--再按两下"tab"键--出现开关字母为"p"的所有文件或目录。
+
+49、查阅历史记录命令或最近执行的命令
+history
+history 10  最近执行的10个命令
+!5   执行历史编号为5的命令
+!ls  最后一次以ls开头的命令
+
+50、Tcp、Ip
+应用层-->传输层-->Ip层-->链路层
+你好！==>app_你好==>tcp_app_你好==>ip_tcp_app_你好==>帧头_ip_tcp_app_你好==>网卡==>路由
+
+51、SSL加密（还有MD5加密、AES、DES等多种）
+
+52、追踪路由命令
+tracert www.baidu.com
+traceroute www.baidu.com ?
+route #显示路由表
+
+53、配置网络
+setup
+/etc/rc.d/init.d/network restart    #重启网络服务
+
+54、在Linux中，所有的设备都是文件。
+
+55、windows 与 linux 互联，要在虚拟机的"配置"中设置使用哪块网卡。
+
+56、如何查询linux中安装哪些rpm软件
+rpm -qa
+
+57、查询软件是否安装
+rpm -q mysql
+
+58、查询软件包信息
+rpm -qi mysql
+
+59、查询软件包中的文件
+rpm -ql mysql
+
+60、查询文件所属的软件包
+rpm -qf mysql
+
+61、查询包信息对这个软件的介绍
+rpm -qp mysql
+
+62、安装rpm包
+rpm -ivh mysql
+i - install 安装
+v - verbose 提示
+h - hash 进度条
+
+63、删除rpm包
+rpm -e mysql
+
+64、升级rpm
+rpm -U mysql
+
+65、samba windows和linux共享文件。
+
+66、删除软件及依赖包
+--nodeps
+rpm -e --nodeps mysql
+
+67、服务开启停止
+service mysql start/stop/restart
+
+68、安装Samba
+
+69、进程：正在进行的程序。
+
+70、查看系统进程
+ps -aux
+a - 当前终端所有进程信息
+u - 以用户格式显示进程信息
+x - 显示后台进程运行的参数
+
+80、终止进程
+kill  终止某个进程
+killall  终止进程和它的子进程
+
+81、监控linux下进程变化
+top
+top -d 10 #每10秒刷新一次
+u 监测某个用户
+q 退出（Ctrl+C）
+
+82、显示系统时间
+date
+
+83、设置系统时间
+date MMDDHHMMCCYY.SS 月月日日时时分分年年年年.秒秒
+
+84、查看月历
+cal 4 2015
+
+85、查看年历
+cal 2015
+
+86、监控网络状态
+netstat
+netstat -an
+netstat -anp （并显示进程号）
+监测到IP-->找到相关的进程-->killall -9 1840(进程号) 进行封杀
+
+87、检测主机连接命令和windows一样
+ping
+
+88、MySQL (1)免费(2)跨平台(3)轻(4)支持多并发
+
+89、初始化mysql数据库
+script/mysql_install_db --user=mysql
+
+90、修改文件的所有者
+chown -R root . (.代表当前文件夹，-R表示递归)
+chown -R root data （修改date文件夹的所有者）
+
+91、修改用户组
+chgrp -R mysql .
+
+92、启动mysql
+bin/mysqld_safe --user=mysql & （以后台的方式启动）
+
+93、如何进入mysql界面
+./mysql -u -root -p
+
+94、如何增加mysql路径 .bash_profile
+cd /root
+vi .bash_profile
+在path中增加 /home/mysql/bin
+
+95、神奇的ssh，一款集远程操作和上传、下载文件的软件。（还有Putty、winSCP）
+
+96、用户登录程序自启命令放到 /root/etc/.bashrc中即可。
+
+97、临时加载一个路径
+export PATH=......
+
+98、输出命令
+echo
+
+99、通配符、转义符等
+
+100、如果一个命令很长，又经常用，那么可以取一个别名：
+alias
+alias llh='ls -l /home'
+
+附：linux启动过程分析
+（1）BIOS自检
+（2）启动CRUB/LIL0
+（3）运行linux内核并检查硬件
+（4）运行系统的第一个进程init
+（5）init读取系统引导配置文件/etc/inittab中的信息进行初始化
+（6）/etc/rc.d/rd.sysinit系统初始化脚本
+（7）/etc/rc.d/rcX.d/[KS]* 根据运行级别X配置服务
+    终止以K开头的服务；启动以S开头的服务。
+（8）/etc/rc.d/rc.local 执行本地特殊配置
+（9）其它特殊服务
