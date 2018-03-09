@@ -9,3 +9,8 @@ sudo make install
 sudo ln -s /usr/local/python2.7/bin/python /bin/python2.7
 ```
 
+./configure 
+编辑Modules/Setup文件 
+找到下面这句，去掉注释 
+#zlib zlibmodule.c -I$(prefix)/include -L$(exec_prefix)/lib -lz 
+重新编译安装：make & make install
