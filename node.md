@@ -43,3 +43,11 @@ $ source /etc/profile
 $ node -h 
 ```
 node,npm 到次安装完成
+
+
+其它linux安装
+1、下载二进制linux包
+2、解压
+3、建立软链接
+sudo ln -s /opt/node-v0.12.10-linux-x86/bin/node /usr/local/bin/node
+sudo ln -s /opt/node-v0.12.10-linux-x86/bin/npm /usr/local/bin/npm
