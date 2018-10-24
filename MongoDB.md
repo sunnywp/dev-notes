@@ -34,6 +34,8 @@ auth=false
 ```
 cd /usr/local/mongoDB/mongodbserver/bin/
 ./mongod --config /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
+# 可能有报错，查看日志
+vi /usr/local/mongoDB/mongodbserver/logs/mongodb.log
 ```
 ### 5、添加管理用户：userAdminAnyDatabase
 ```
