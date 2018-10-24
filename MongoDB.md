@@ -19,8 +19,7 @@ cd /usr/local/mongoDB/mongodbserver
 mkdir data
 mkdir log
 mkdir etc
-cd etc/
-vi mongodb.conf
+vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
 # 填入下面内容---------------
 dbpath=/usr/local/mongoDB/mongodbserver/data
 logpath=/usr/local/mongoDB/mongodbserver/logs/mongodb.log
@@ -48,8 +47,8 @@ cd /usr/local/mongoDB/mongodbserver/bin/
 > db.shutdownServer()
 ```
 ### 6、使用权限方式重新启动mongoDB
+在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
 ```
-# 在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
 > use admin
 > db.auth('admin', 'XXX') # 这验证成功后会显示：1
 > db.updateUser("admin", {
