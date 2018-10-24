@@ -9,16 +9,11 @@ tar -Jxf node-v8.12.0-linux-x64.tar.xz
 mv node-v8.12.0-linux-x64 /usr/local/node
 ```
 
-### 2、安装gcc、ssl-dev和bzip2*
+### 2、安装gcc并设置软链接
 ```
 yum install gcc gcc-c++
-# 确保安装了python，大部分安装失败都是由于python版本过低导致。安装之前，升级python版本。
-# nodejs 0.8.5需要，请安装python前，先安装此模块。
-yum install -y bzip2*
-./configure --prefix=/usr/local/node
-make
-make install
-ln -s /usr/local/bin/node /usr/bin/node
+ln -s /usr/local/node/bin/node /usr/local/bin/node
+ln -s /usr/local/node/bin/npm /usr/local/bin/npm
 ```
 
 ### 3、配置NODE_HOME 
@@ -29,8 +24,6 @@ export NODE_HOME=/usr/local/node
 export PATH=$NODE_HOME/bin:$PATH 
 # 保存退出后执行如下命令，使刚才的配置生效 
 source /etc/profile
-ln -s /opt/node-v0.12.10-linux-x86/bin/node /usr/local/bin/node
-ln -s /opt/node-v0.12.10-linux-x86/bin/npm /usr/local/bin/npm
 # 执行node -h命令验证设置成功
 node -h 
 ```
