@@ -47,13 +47,15 @@ vi /usr/local/mongoDB/mongodbserver/logs/mongodb.log
 > show users #db.system.users.find()
 # 关闭mongo, 这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件）
 > db.shutdownServer()
+# 退出mongo
+> exit 
 ```
 ### 6、使用权限方式重新启动mongoDB
 ```
 # 在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
 vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
 ./mongod --config /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
-
+./mongo
 > use admin
 > db.auth('admin', 'XXX') # 这验证成功后会显示：1
 > db.updateUser("admin", {
@@ -63,6 +65,9 @@ vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
       {"role": "clusterAdmin", "db": "admin"}
     ]
   })
+> db.shutdownServer()
+# 退出mongo
+> exit 
 ```
 ### 7、配置环境变量
 ```
@@ -72,13 +77,7 @@ PATH=$PATH:/usr/local/mongoDB/mongodbserver/bin
 # ------------------------------
 source /etc/profile
 ln -s /usr/local/mongoDB/mongodbserver/bin/mongo  /usr/bin/mongo
-```
-### 8、关闭服务，启动服务
-```
-# 关闭
-> db.shutdownServer()
-# 启动
-mongod --config /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
+# 环境变量配置成功，在系统中就到处都能用mongo或mongod命令了
 ```
 ### 9、把mongoDB设置为系统服务并且设置开机启动
 ```
