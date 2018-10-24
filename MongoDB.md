@@ -49,8 +49,9 @@ vi /usr/local/mongoDB/mongodbserver/logs/mongodb.log
 > db.shutdownServer()
 ```
 ### 6、使用权限方式重新启动mongoDB
-在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
 ```
+vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
+# 在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
 > use admin
 > db.auth('admin', 'XXX') # 这验证成功后会显示：1
 > db.updateUser("admin", {
