@@ -28,3 +28,7 @@ source /etc/profile
 node -h 
 ```
 
+### 4、npm ERR! Unexpected end of JSON input while parsing near '...YtVN3ZtkL5gmr8yfAyB5B'
+```
+npm cache clean --force
+```
