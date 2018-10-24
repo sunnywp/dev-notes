@@ -42,7 +42,7 @@ vi /usr/local/mongoDB/mongodbserver/logs/mongodb.log
 ./mongo
 # 进入mongo命令行-----------
 > use admin
-> db.createUser({user: "admin", pwd: "XXX", roles: [{role: "userAdminAnyDatabase", db: "admin"}]});
+> db.createUser({user: "admin", pwd: "XXX", roles: [{role: "userAdminAnyDatabase", db: "admin"}]})
 # 查看用户是否创建成功
 > show users #db.system.users.find()
 # 关闭mongo, 这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件）
