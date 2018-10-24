@@ -114,3 +114,12 @@ esac
 chmod +x /etc/rc.d/init.d/mongod
 service mongod start
 ```
+### 10、创建库用户
+```
+mongo
+> use admin
+> db.auth('admin', 'XXX')
+> use mydb
+> db.createUser({user: "root", pwd: "xxxxxx", roles: [{ role: "readWrite", db: "mydb" }]})
+```
+
