@@ -50,8 +50,10 @@ vi /usr/local/mongoDB/mongodbserver/logs/mongodb.log
 ```
 ### 6、使用权限方式重新启动mongoDB
 ```
-vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
 # 在配置文件中，将"auth"改为"true"，然后重启后用admin用户验证
+vi /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
+./mongod --config /usr/local/mongoDB/mongodbserver/etc/mongodb.conf
+
 > use admin
 > db.auth('admin', 'XXX') # 这验证成功后会显示：1
 > db.updateUser("admin", {
