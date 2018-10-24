@@ -11,8 +11,7 @@ mv node-v8.12.0-linux-x64 /usr/local/node
 
 ### 2、安装gcc、ssl-dev和bzip2*
 ```
-yum install gcc-c++
-yum install openssl-dev
+yum install gcc gcc-c++
 # 确保安装了python，大部分安装失败都是由于python版本过低导致。安装之前，升级python版本。
 # nodejs 0.8.5需要，请安装python前，先安装此模块。
 yum install -y bzip2*
