@@ -123,3 +123,5 @@ mongo
 > db.createUser({user: "root", pwd: "xxxxxx", roles: [{ role: "readWrite", db: "mydb" }]})
 ```
 
+
+// mongoose.connect('mongodb://username:password@dbhost/zjson');
