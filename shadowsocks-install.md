@@ -148,7 +148,7 @@ $ vi  /etc/shadowsocks.json
 $ yum install firewalld
 # 启动防火墙
 $ systemctl start firewalld
-# 开启防火墙相应的端口(端口号是你自己设置的端口)
+# 开启防火墙相应的端口(端口号是你自己设置的端口)（这里需要注意同时暴露ssh端口）
 $ firewall-cmd --permanent --zone=public --add-port=443/tcp
 $ firewall-cmd --reload
 ```
