@@ -106,6 +106,8 @@ fi
 
 ### 【搭建 Shadowsocks 服务】
 ```
+注意：
+Python版本要求2.7以上
 # 安装组件
 $ yum install m2crypto python-setuptools
 $ easy_install pip
